@@ -1,0 +1,181 @@
+@import "fonts.css";
+
+html {
+  	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  	font-family: "Public Sans";
+}
+ul {
+  	list-style-type: none;
+}
+a {
+  	text-decoration: none;
+}
+
+.container {
+  	max-width: 1110px;
+  	margin-left: auto;
+  	margin-right: auto;
+	border: 1px solid red;
+}
+.request-link {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 28px;
+	background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+	border-radius: 22px;
+	padding: 8px 33px;
+	color: #FFFFFF;
+	transition: opacity ease 0.2s;
+}
+.request-link:hover {
+	opacity: 0.4;
+}
+
+
+/* HEADER */
+
+.header {
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid red;
+}
+.site-header {
+	padding: 18px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.site_header_logo {
+	display: block;
+}
+.sitenav {
+	display: flex;
+	align-items: center;
+}
+.toggler-menu {
+	display: none;
+	position: relative;
+	padding: 4px 0;
+	cursor: pointer;
+}
+.toggler-open-icon {
+	display: block;
+	background: #2D314D;
+	width: 24px;
+	height: 1px;
+	position: relative;
+	transition: background 0.1s ease-out;
+}
+.toggler-open-icon::before, .toggler-open-icon::after{
+	content: "";
+	display: block;
+	position: absolute;
+	background: #2D314D;
+	height: 100%;
+	width: 100%;
+	transition: all 0.1s ease-out;
+}
+.toggler-open-icon::before {
+	top: 6px;
+}
+.toggler-open-icon::after {
+	top: -6px;
+}
+.menu-btn {
+	display: none;
+}
+.menu-btn:checked ~ .sitenav-list .sitenav-item .sitenav-link {
+	font-size: 18px;
+	line-height: 21px;	
+}
+.menu-btn:checked ~ .toggler-menu .toggler-open-icon {
+	background: transparent;
+}
+.menu-btn:checked ~ .toggler-menu .toggler-open-icon::before {
+	transform: rotate(-45deg);
+	top: 0;
+}
+.menu-btn:checked ~ .toggler-menu .toggler-open-icon::after {
+	transform: rotate(45deg);
+	top: 0;
+}
+.sitenav-list {
+	display: flex;
+}
+.sitenav-item {
+	margin-right: 30px;
+}
+.sitenav-item:last-child {
+	margin-right: 0;
+}
+.sitenav-link {
+	font-size: 14px;
+	line-height: 16px;
+	color: #9597A5;
+	display: block;
+	position: relative;
+}
+.sitenav-link::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 44px;
+	width: 0%;
+	transition: width 1s ease;
+	height: 4px;
+	background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+}
+.sitenav-link:hover::after {
+	width: 100%;
+}
+
+
+
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width: 450px) {
+	.site-header {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.toggler-menu {
+		display: block;
+	}
+	.sitenav-list {
+		flex-direction: column;
+		text-align: center;
+		position: absolute;
+		left: 5%;
+		padding: 32px 0;
+		background-color: #fff;
+		border-radius: 4px;
+		width: 90%;
+		top: 80px;
+	}
+	.sitenav-item {
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.sitenav-item:last-child {
+		margin-bottom: 0;
+	}
+	.sitenav-link {
+		color: #2D314D;
+		font-size: 0px;
+		line-height: 0px;
+		text-align: center;
+	}
+	.site-header .request-link {
+		display: none;
+	}
+}
