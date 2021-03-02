@@ -22,10 +22,9 @@ a {
 }
 
 .container {
-  	max-width: 1110px;
+  	max-width: 77%;
   	margin-left: auto;
   	margin-right: auto;
-	border: 1px solid red;
 }
 .request-link {
 	font-weight: 500;
@@ -35,6 +34,7 @@ a {
 	border-radius: 22px;
 	padding: 8px 33px;
 	color: #FFFFFF;
+	display: inline-block;
 	transition: opacity ease 0.2s;
 }
 .request-link:hover {
@@ -47,7 +47,6 @@ a {
 .header {
 	background-color: #fff;
 	width: 100%;
-	border: 1px solid red;
 }
 .site-header {
 	padding: 18px 0;
@@ -94,6 +93,13 @@ a {
 .menu-btn {
 	display: none;
 }
+.menu-btn:checked .main {
+	background: linear-gradient(180deg, #2D314D 0%, rgba(45, 49, 77, 0.0001) 100%);
+	border: 1px solid red;
+}
+.menu-btn:checked ~ .sitenav-list {
+	background-color: #fff;
+}
 .menu-btn:checked ~ .sitenav-list .sitenav-item .sitenav-link {
 	font-size: 18px;
 	line-height: 21px;	
@@ -139,11 +145,144 @@ a {
 	width: 100%;
 }
 
-
-
+/* MAIN */
+.main {
+	position: relative;
+}
+.main-img {
+	height: 900px;
+	background-image: url('../images/hero-phones-desktop.png'), url('../images/hero-phones-desktop-bg.png');
+	background-repeat: no-repeat;
+	background-position: right -80px;
+	z-index: 100;
+	position: relative;
+}
+.digital-banking {
+	background-color: #F2F2F2;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	padding: 170px 11.5%;
+}
+.digital-banking-heading {
+	font-weight: 100;
+	width: 40%;
+	font-size: 56px;
+	line-height: 64px;
+	color: #2D314D;
+}
+.digital-banking-content {
+	font-size: 18px;
+	line-height: 28px;
+	width: 42%;
+	margin-top: 24px;
+	color: #9597A5;
+}
+.digital-banking .request-link {
+	position: relative;
+	margin-top: 36px;
+	z-index: 1000;
+}
+.choose-easybank {
+	position: absolute;
+	width: 100%;
+	top: 707px;
+	padding: 96px 11.5%;
+	background-color: #F4F5F7;
+}
+.choose-easybank-heading {
+	font-weight: 100;
+	font-size: 40px;
+	line-height: 64px;
+	color: #2D314D;
+}
+.choose-easybank-content {
+	font-size: 18px;
+	width: 55%;
+	line-height: 28px;
+	margin-top: 16px;
+	color: #9597A5;
+}
+.choose-easybank-list {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 72px;
+}
+.choose-easybank-item {
+	width: 22.5%;
+}
+.choose-easybank-item>img {
+	display: block;
+}
+.choose-easybank-item>h3 {
+	font-weight: 100;
+	font-size: 24px;
+	line-height: 28px;
+	color: #2D314D;
+	margin-top: 40px;
+}
+.choose-easybank-item>p {
+	font-size: 16px;
+	line-height: 26px;
+	margin-top: 26px;
+	color: #9597A5;
+}
+.latest-articles {
+	position: absolute;
+	top: 1375px;
+	width: 100%;
+	background-color: #F2F2F2;
+	padding: 80px 11.5%;
+}
+.latest-articles-heading {
+	font-weight: 100;
+	font-size: 40px;
+	line-height: 64px;
+	color: #2D314D;
+}
+.latest-articles-list {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.latest-articles-item {
+	width: 22.6%;
+	border: 5px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+.latest-articles-item>img {
+	width: 100%;
+	display: block;
+}
+.latest-articles-content {
+	padding: 24px;
+}
+.latest-articles-content>span {
+	font-size: 10px;
+	line-height: 18px;
+	color: #9597A5;
+}
+.latest-articles-content>h4 {
+	font-weight: 100;
+	font-size: 16px;
+	line-height: 20px;
+	margin-top: 8px;
+}
+.latest-articles-content>p {
+	font-size: 13px;
+	line-height: 18px;
+	color: #9597A5;
+	margin-top: 8px;
+}
 
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width: 450px) {
+
+	/* HEDEAR */
+	.header .container {
+		max-width: 100%;
+	}
 	.site-header {
 		padding-left: 24px;
 		padding-right: 24px;
@@ -157,10 +296,11 @@ a {
 		position: absolute;
 		left: 5%;
 		padding: 32px 0;
-		background-color: #fff;
+		background-color: transparent;
 		border-radius: 4px;
 		width: 90%;
 		top: 80px;
+		z-index: 1000;
 	}
 	.sitenav-item {
 		width: 100%;
@@ -177,5 +317,92 @@ a {
 	}
 	.site-header .request-link {
 		display: none;
+	}
+
+	/* MAIN */
+	.main-img {
+		background-image: url('../images/hero-phones-desktop-mobile.png'), url('../images/hero-phones-desktop-bg-mobile.png');
+		background-size: 100%;
+	}
+	.digital-banking {
+		text-align: center;
+		padding-top: 322px;
+		padding-bottom: 78px;
+	}
+	.digital-banking-heading, .digital-banking-content {
+		width: 100%;
+	}
+	.digital-banking-heading {
+		font-size: 40px;
+		line-height: 47px;
+	}
+	.digital-banking-content {
+		font-size: 15px;
+		line-height: 25px;
+		margin-top: 16px;
+	}
+	.digital-banking .request-link {
+		margin-top: 32px;
+	}
+	.choose-easybank {
+		top: 697px;
+		padding-top: 64px;
+		text-align: center;
+	}
+	.choose-easybank-heading {
+		font-size: 32px;
+		line-height: 38px;
+	}
+	.choose-easybank-content {
+		font-size: 15px;
+		line-height: 25px;
+		margin-top: 14px;
+		width: 100%;
+	}
+	.choose-easybank-list {
+		margin-top: 56px;
+		flex-direction: column;
+	}
+	.choose-easybank-item {
+		width: 100%;
+		margin-bottom: 32px;
+	}
+	.choose-easybank-item:last-child {
+		margin-bottom: 0;
+	}
+	.choose-easybank-item>img {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.choose-easybank-item>h3 {
+		margin-top: 24px;
+		font-size: 20px;
+		line-height: 28px;
+	}
+	.choose-easybank-item>p {
+		margin-top: 16px;
+		font-size: 15px;
+		line-height: 25px;
+	}
+	.latest-articles {
+		top: 2030px;
+		padding-top: 88px;
+	}
+	.latest-articles-heading {
+		font-size: 32px;
+		line-height: 38px;
+		text-align: center;
+	}
+	.latest-articles-list {
+		margin-top: 31px;
+		flex-direction: column;
+		
+	}
+	.latest-articles-item {
+		width: 100%;
+		margin-bottom: 24px;
+	}
+	.latest-articles-item:last-child {
+		margin-bottom: 0;
 	}
 }
