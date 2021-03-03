@@ -283,6 +283,80 @@ a {
 	margin-top: 8px;
 }
 
+/* FOOTER */
+.footer {
+	position: absolute;
+	top: 2115px;
+	width: 100%;
+	background-color: #2D314D;
+	padding: 48px 0;
+}
+.site-footer {
+	display: flex;
+}
+.social-websites-wrapper {
+	width: 154px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.social-websites-wrappe>img {
+	display: block;
+}
+.social-websites {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.social-website-link>svg {
+	display: block;
+}
+path {
+	transition: fill 0.2s ease;
+}
+path:hover {
+	fill: #30C88F;
+}
+.useful-links {
+	margin-left: 130px;
+}
+.useful-links-last {
+	margin-right: auto;
+}
+.useful-link {
+	margin-bottom: 8px;
+	font-size: 15px;
+	line-height: 26px;
+}
+.useful-link:last-child {
+	margin-bottom: 0;
+}
+.useful-link a {
+	font-size: 15px;
+	line-height: 26px;
+	color: #fff;
+	transition: color 0.2s ease;
+}
+.useful-link a:hover {
+	color: #30C88F;
+}
+.footer-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.footer-info a {
+	display: inline-block;
+}
+.footer-info p {
+	font-size: 15px;
+	line-height: 26px;
+	color: #fff;
+	opacity: 0.5;
+}
+
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width: 450px) {
 
@@ -392,7 +466,7 @@ a {
 		line-height: 25px;
 	}
 	.latest-articles {
-		top: 2030px;
+		top: 1992px;
 		padding-top: 88px;
 	}
 	.latest-articles-heading {
@@ -411,5 +485,40 @@ a {
 	}
 	.latest-articles-item:last-child {
 		margin-bottom: 0;
+	}
+
+	/* FOOTER */
+	.footer {
+		top: 4122px;
+	}
+	.site-footer {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.social-websites-wrapper {
+		align-items: center;
+	}
+	.social-websites {
+		margin-top: 32px;
+	}
+	.useful-links-first {
+		margin-top: 34px;
+	}
+	.useful-links {
+		margin-left: 0;
+	}
+	.useful-links-last {
+		margin-right: 0;
+		margin-top: 8px;
+	}
+	.footer-info {
+		align-items: center;
+	}
+	.footer-info a {
+		margin-top: 32px;
+	}
+	.footer-info p {
+		margin-top: 24px;
 	}
 }
